@@ -1,0 +1,26 @@
+<?php
+// admin/navbar.php
+?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="dashboard.php">PDF Admin</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+      
+       
+ <?php if($_SESSION['user']['role'] == 'super_admin'){ ?>
+        <li class="nav-item"><a href="add_department.php" class="nav-link">Add Department</a></li>
+ //	
+	<li class="nav-item"><a href="manage_users.php" class="nav-link">Manage Users</a></li>
+       
+ <?php } ?>
+   
+     <li class="nav-item"><a href="archive.php" class="nav-link">Archive PDFs</a></li>
+      </ul>
+      <span class="navbar-text text-white">
+        Logged in as: <?php echo htmlspecialchars($_SESSION['user']['username']); ?>
+      </span>
+      <a href="logout.php" class="btn btn-secondary ms-3">Logout</a>
+    </div>
+  </div>
+</nav>
